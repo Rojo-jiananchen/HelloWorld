@@ -10,8 +10,6 @@ pipeline {
                 echo "Junit test finished."
             }
         }
-    }
-    stages {
         stage('Build') {
             steps {
                 sh 'echo "Hello World"'
