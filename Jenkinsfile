@@ -1,12 +1,8 @@
 pipeline {
     agent any
-    def triggers = [] 
-    if (env.BRANCH_NAME != 'master') {
-      triggers << [
-        $class: 'hudson.triggers.TimerTrigger',
-        spec: "H/3 * * * *" 
-      ]
-    }
+    triggers {
+        cron('H/1 * * * *')
+    }
     
     stages {
         stage('Build') {
